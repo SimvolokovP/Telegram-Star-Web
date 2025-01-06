@@ -1,0 +1,14 @@
+.greetingSection {
+  padding: 16px;
+}
+
+.greetingSection div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.greetingTitle {
+  font-size: 24px;
+  font-weight: 500;
+}
