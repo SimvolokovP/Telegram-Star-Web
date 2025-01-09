@@ -5,15 +5,16 @@ export class ApiService {
     donateData: IDonate
   ) {
     const options: RequestInit = {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: donateData ? JSON.stringify(donateData) : undefined,
     };
-  
+    console.log(donateData);
+    console.log(import.meta.env.VITE_SERVER_URL);
     const resp = await fetch(
-      `${import.meta.env.VITE_SERVER_URL}/api/donate`,
+      `${import.meta.env.VITE_SERVER_URL}/donate`,
       options
     );
   

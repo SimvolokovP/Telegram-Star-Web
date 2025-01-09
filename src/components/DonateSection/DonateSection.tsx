@@ -7,6 +7,7 @@ import TriggerModal from "../TriggerModal/TriggerModal";
 import { hapticFeedback, invoice, mainButton } from "@telegram-apps/sdk-react";
 import useTg from "../../hooks/useTg";
 import { ApiService } from "../../api/apiService";
+import { IDonate } from "../../models/IDonate";
 
 const DonateSection = () => {
   const [stars, setStars] = useState<number>(0);
@@ -25,10 +26,11 @@ const DonateSection = () => {
         console.log("haptic click!");
       }
       if (user) {
+        console.log("response: ");
         const resp = await ApiService.donate({
           amount: stars,
           userId: user?.id,
-        });
+        } as IDonate);
         invoice.open(resp.invoice_link.replace("https://t.me/$", ""));
       }
     };
