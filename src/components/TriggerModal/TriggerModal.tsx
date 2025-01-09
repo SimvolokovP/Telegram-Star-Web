@@ -15,7 +15,7 @@ const TriggerModal = () => (
     header={<Modal.Header />}
     trigger={
       <Button size="l" stretched>
-        Open
+        Open!
       </Button>
     }
   >
